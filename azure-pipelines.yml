@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'de404261-b940-4d5b-886e-6399b0a38d1a'
-  imageRepository: 'coffeepay'
+  imageRepository: 'pay'
   containerRegistry: 'admin18acr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
@@ -54,7 +54,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'admin18acr'
-        repository: 'coffee-pay'
+        repository: 'pay'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - task: Docker@2
